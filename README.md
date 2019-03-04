@@ -1,15 +1,15 @@
 # kube-utils
 ## Docker Image
-Docker image based on Alpine, containing tools like curl, nmap.
+Docker image based on Alpine, containing tools like curl, drill, nc, nmap, etc.
 https://hub.docker.com/u/serbangilvitu/
 
 ## Kubernetes Pod
 To deploy
 ```
-kubectl apply -f k8s-utils.yaml
+kubectl apply -f utils.yaml
 ```
 
-To execute a curl on a Kubernetes service
+For example, executing curl on a Kubernetes service
 ```
 kubectl exec utils -- curl myservice.mynamespace
 ```
