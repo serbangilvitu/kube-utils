@@ -9,7 +9,13 @@ To deploy
 kubectl apply -f utils.yaml
 ```
 
-For example, executing curl on a Kubernetes service
+### Examples
+Execute curl
 ```
 kubectl exec utils -- curl myservice.mynamespace
+```
+
+Get a shell to the running Container:
+```
+kubectl exec -it utils -- /bin/ash
 ```
