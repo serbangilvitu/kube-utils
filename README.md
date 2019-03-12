@@ -3,10 +3,17 @@
 Docker image based on Alpine, containing tools like curl, drill, nc, nmap, etc.
 https://hub.docker.com/u/serbangilvitu/
 
-## Kubernetes Pod
+## Deploy to Kubernetes
+### As a Pod
 To deploy
 ```
-kubectl apply -f utils.yaml
+kubectl apply -f k8s/pod.yaml
+```
+
+### As a Deployment
+To deploy
+```
+kubectl apply -f k8s/deploy.yaml
 ```
 
 ### Examples
