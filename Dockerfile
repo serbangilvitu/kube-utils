@@ -9,4 +9,4 @@ RUN groupadd -r utils && \
 
 USER utils
 
-ENTRYPOINT ["cat"]
+ENTRYPOINT ["/bin/sh", "-c", "while :; do sleep 60; done"]

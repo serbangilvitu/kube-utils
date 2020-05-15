@@ -24,5 +24,5 @@ kubectl exec utils -- curl myservice.mynamespace
 
 Get a shell to the running Container:
 ```
-kubectl exec -it utils -- /bin/ash
+kubectl exec -it utils -- bash
 ```
