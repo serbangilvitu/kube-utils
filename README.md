@@ -10,17 +10,19 @@ Docker image containing:
 
 # Alias
 ```
-alias kdbg='kubectl run -it --rm --restart=Never --image=docker.io/serbangilvitu/kube-utils:latest debug '
+alias kdbg='kubectl run -it --rm --restart=Never --image=docker.io/serbangilvitu/kube-utils:latest debug-$(date +%F-%H-%M-%S) '
 ```
 
 ### Examples
 Get a shell for running multiple commands:
 ```
-kubectl run -it --rm --restart=Never --image=docker.io/serbangilvitu/kube-utils:latest debug -- /bin/ash
+kubectl run -it --rm --restart=Never --image=docker.io/serbangilvitu/kube-utils:latest debug -- ash
+kdbg ash
 ```
 
 Execute a single command
 ```
-kubectl exec utils -- curl myservice.mynamespace
+kubectl run -it --rm --restart=Never --image=docker.io/serbangilvitu/kube-utils:latest debug -- curl example.com
+kdbg curl example.com
 ```
 
