@@ -1,12 +1,12 @@
-FROM ubuntu:20.04
 
-ENV DEBIAN_FRONTEND=noninteractive
+FROM alpine:3.12
 
-RUN groupadd -r utils && \
-  useradd -r -s /bin/false -g utils utils && \
-  apt-get update && \
-  apt-get -y install curl jq dnsutils netcat nmap iputils-tracepath
+RUN adduser -S -g utils utils && \
+  apk update && \
+  apk add curl && \
+  apk add drill && \
+  apk add jq && \
+  apk add mtr && \
+  apk add nmap
 
 USER utils
-
-ENTRYPOINT ["/bin/sh", "-c", "while :; do sleep 60; done"]
